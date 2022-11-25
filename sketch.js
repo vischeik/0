@@ -6,10 +6,9 @@ function setup()
     song = loadSong
     soundFormats('mp3','ogg');
     musicFile = leadSound('Blast Off',loadMusic);
-    musicFile.play();
 }
 function loadMusic()
 {
-        musicFile.play();
+        musicFile.play(); //ekfms vkdlf
 
 }
