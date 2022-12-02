@@ -1,6 +1,8 @@
 var song;
 var button;
 var jumpButton;
+var amp;
+var t=0;
 
 function setup(){
         createCanvas(200,200);
@@ -9,7 +11,8 @@ function setup(){
         button.mousePressed(togglePlaying);
         jumpButton = createButton('jump')
         jumpButton.mousePressed(jumpSong);
-        background(51);
+
+        amp = new p5.Amplitude();
 
 song.addCue(2,changeBackground,color(0,0,0));
 song.addCue(4,changeBackground,color(255,255,255));
@@ -27,10 +30,6 @@ function jumpSong() {
          song.jump(t);
 }
 
-function draw() {
-        
-}
-
 function togglePlaying(){
     if(!song.isPlaying()){
             song.play();
@@ -40,6 +39,16 @@ function togglePlaying(){
     song.stop();
     button.html('play');
             }
+    }
+
+    function draw() {
+        console.log(amp. getLevel());
+        background(255, 255,255)
+        noStroke();
+        fill(80,80,80);
+        ellipse(width/2,height/2,640,amp.getLevel()*5000);
+        fill(255,255,255);
+        ellipse(width/2, height/2, 640, amp.getLevel()*500);
     }
 
     function loaded() {
