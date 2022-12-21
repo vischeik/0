@@ -87,13 +87,12 @@ function draw() {
 
   background(0,0,10);
   var vol = amp.getLevel();
-  var diam = map(vol, 0, 0.3, 10, 200);
+  var diam = map(vol, 0, 0.3, 10, 100);
 
   noStroke();
   colorMode(HSB);
 
-  fill(0,0,20);
-  rect(480,0,160,480)
+
   fill(200, 30, 100);
   rectMode(RADIUS);
   rect(width / 2 -60, height / 2, diam, diam, round);
