@@ -92,6 +92,8 @@ function draw() {
   noStroke();
   colorMode(HSB);
 
+  fill(0,0,20)
+  rect(485,0,155,480);
 
   fill(200, 30, 100);
   rectMode(RADIUS);
@@ -150,7 +152,6 @@ function togglePlaying1() {
       song2.play();
       song1.pause();
       button.html("pause");
-    
 
     } else {
       song2.pause();
@@ -165,12 +166,14 @@ function togglePlaying2() {
     button2.html("Music2");
     song1.pause();
     button.html("play");
-    
+    SliderG.value(1);
+
   } else {
     music = 1;
     button2.html("Music1");
     song2.pause();
     button.html("play");
+    SliderG.value(1);
   }
 }
 
@@ -180,7 +183,6 @@ function togglePlaying3(){
 
   jumpv2=map(SliderG.value(),0,6,0,253);
   song2.jump(jumpv2);
-
 
 }
 
